@@ -8,7 +8,13 @@ import 'package:login_page_clean_architecture/locator.dart';
 ///business logic is completely independent of UI
 class LoginUseCase {
   ///API injection
-  UserLogin api = locator<DatabaseUserLogin>();
+  UserLogin? api;
+
+  LoginUseCase.test();
+
+  LoginUseCase() {
+    api = locator<DatabaseUserLogin>();
+  }
 
   ///Function to fetch login response from backend services like API, Firebase etc
   ///business logic is here
@@ -16,7 +22,8 @@ class LoginUseCase {
     if (kDebugMode) {
       print('use case $userName $password');
     }
-    final loginResponse = api.userLogin(userName: userName, password: password);
+    final loginResponse =
+        api?.userLogin(userName: userName, password: password);
     if (kDebugMode) {
       print('use case response $loginResponse');
     }
