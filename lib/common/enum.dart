@@ -1,0 +1,1 @@
+enum BackendResponse { success, failure }
