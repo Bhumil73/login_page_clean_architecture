@@ -4,6 +4,7 @@ import 'package:login_page_clean_architecture/features/login/presentation/manage
 
 GetIt locator = GetIt.instance;
 
+///Using get it for dependency injection
 void setupLocator() {
   locator.registerFactory(() => DatabaseUserLogin());
   locator.registerFactory(() => LoginViewModel());

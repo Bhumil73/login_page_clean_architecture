@@ -1,3 +1,4 @@
+///User entity can be used for dealing with real services after the login page
 class User {
   int? id;
   String? name;

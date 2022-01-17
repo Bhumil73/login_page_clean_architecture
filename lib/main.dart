@@ -3,6 +3,7 @@ import 'package:login_page_clean_architecture/features/login/presentation/pages/
 import 'package:login_page_clean_architecture/locator.dart';
 
 void main() {
+  //Setting up get it for injection
   setupLocator();
   runApp(const MyApp());
 }

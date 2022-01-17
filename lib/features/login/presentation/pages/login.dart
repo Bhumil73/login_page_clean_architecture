@@ -3,6 +3,11 @@ import 'package:login_page_clean_architecture/features/login/presentation/manage
 import 'package:login_page_clean_architecture/locator.dart';
 import 'package:provider/provider.dart';
 
+/// Only the UI part is supposed to be coded here
+/// We use Provider to access the view model
+/// View model describes all the view related changes and notifies listeners
+/// the screen rebuilds everytime listeners are notified
+/// no function should be implemented here. Only function calls from view model
 class Login extends StatelessWidget {
   const Login({Key? key}) : super(key: key);
 
@@ -15,7 +20,7 @@ class Login extends StatelessWidget {
           appBar: AppBar(
             title: const Text('Login Page'),
           ),
-          body: Padding(
+          body: model.state == LoadingState.loading ? const Center(child: CircularProgressIndicator(),): Padding(
             padding: const EdgeInsets.all(10.0),
             child: Column(
               children: [
